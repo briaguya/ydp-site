@@ -9,7 +9,26 @@ export default {
     title: "React Static"
   }),
   getRoutes: async () => {
-    const { events, home, acronyms } = await jdown("content");
+    const { upcomingEvents, pastEvents, home, acronyms } = await jdown(
+      "content"
+    );
+
+    const upcomingRoutes = upcomingEvents.map(event => ({
+      path: `/upcoming/${event.slug}`,
+      component: "src/containers/Event",
+      getData: () => ({
+        event
+      })
+    }));
+
+    const pastRoutes = pastEvents.map(event => ({
+      path: `/past/${event.slug}`,
+      component: "src/containers/Event",
+      getData: () => ({
+        event
+      })
+    }));
+
     return [
       {
         path: "/",
@@ -20,21 +39,16 @@ export default {
       },
       {
         path: "/wtf",
-        component: "src/containers/WTF",
+        component: "src/containers/WTF"
       },
       {
         path: "/events",
         component: "src/containers/Events",
         getData: () => ({
-          events
+          upcomingEvents,
+          pastEvents
         }),
-        children: events.map(event => ({
-          path: `/event/${event.slug}`,
-          component: "src/containers/Event",
-          getData: () => ({
-            event
-          })
-        }))
+        children: upcomingRoutes.concat(pastRoutes)
       },
       {
         is404: true,

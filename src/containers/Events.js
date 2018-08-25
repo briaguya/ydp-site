@@ -2,15 +2,24 @@ import React from "react";
 import { withRouteData, Link } from "react-static";
 //
 
-export default withRouteData(({ events }) => (
+export default withRouteData(({ upcomingEvents, pastEvents }) => (
   <div>
     <h1>Events</h1>
     <br />
-    All Events:
+    Upcoming Events:
     <ul>
-      {events.map(event => (
+      {upcomingEvents.map(event => (
         <li key={event.slug}>
-          <Link to={`/events/event/${event.slug}/`}>{event.title}</Link>
+          <Link to={`/events/upcoming/${event.slug}/`}>{event.title}</Link>
+        </li>
+      ))}
+    </ul>
+    <br />
+    Past Events:
+    <ul>
+      {pastEvents.map(event => (
+        <li key={event.slug}>
+          <Link to={`/events/past/${event.slug}/`}>{event.title}</Link>
         </li>
       ))}
     </ul>
