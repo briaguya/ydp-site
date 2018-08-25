@@ -9,7 +9,7 @@ export default {
     title: "React Static"
   }),
   getRoutes: async () => {
-    const { events, home, about } = await jdown("content");
+    const { events, home, acronyms } = await jdown("content");
     return [
       {
         path: "/",
@@ -21,9 +21,6 @@ export default {
       {
         path: "/wtf",
         component: "src/containers/WTF",
-        getData: () => ({
-          about
-        })
       },
       {
         path: "/events",

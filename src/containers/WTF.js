@@ -3,6 +3,20 @@ import { withRouteData, Link } from "react-static";
 import convert from "htmr";
 //
 
-export default withRouteData(({ names }) => (
-  <div>TODO: Actually make the name generator</div>
-));
+const acronyms = [
+  "Degenerate Austin Degenerates",
+  "Dancing at Dawn",
+  "Dancing after Dark",
+  "Dope and Dope & Tight"
+];
+
+export default withRouteData(() => {
+
+  const acronym = acronyms[Math.floor(Math.random()*acronyms.length)]
+
+  return (
+    <div>
+      <div>{acronym}</div>
+    </div>
+  );
+});
