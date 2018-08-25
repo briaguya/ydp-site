@@ -4,14 +4,15 @@ import chokidar from "chokidar";
 
 chokidar.watch("content").on("all", () => reloadRoutes());
 
+import acronyms from "./content/wtf/acronyms";
+import noways from "./content/wtf/noways";
+
 export default {
   getSiteData: () => ({
     title: "React Static"
   }),
   getRoutes: async () => {
-    const { upcomingEvents, pastEvents, home, acronyms } = await jdown(
-      "content"
-    );
+    const { upcomingEvents, pastEvents, home } = await jdown("content");
 
     const upcomingRoutes = upcomingEvents.map(event => ({
       path: `/upcoming/${event.slug}`,
@@ -39,7 +40,11 @@ export default {
       },
       {
         path: "/wtf",
-        component: "src/containers/WTF"
+        component: "src/containers/WTF",
+        getData: () => ({
+          acronyms,
+          noways
+        })
       },
       {
         path: "/events",
