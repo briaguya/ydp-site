@@ -7,7 +7,7 @@ import Routes from "react-static-routes";
 import "./app.css";
 
 const App = () => (
-  <Router type="hash">
+  <Router>
     <div>
       <nav>
         <Link exact to="/">
