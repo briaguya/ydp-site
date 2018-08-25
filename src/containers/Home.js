@@ -3,8 +3,8 @@ import { withRouteData } from "react-static";
 import convert from "htmr";
 //
 
-export default withRouteData(({ reactStatic }) => (
+export default withRouteData(({ homepage }) => (
   <div>
-    <section>{convert(reactStatic.contents)}</section>
+    <section>{convert(homepage.contents)}</section>
   </div>
 ));

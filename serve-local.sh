@@ -14,6 +14,7 @@ docker run \
     --name yourdadpresents \
     --tty --interactive \
     --publish 3000:80 \
+    --volume "$PWD/content:/app/content" \
     --volume "$PWD/src:/app/src" \
     --volume "$PWD/public:/app/public" \
     --volume "$PWD/yarn.lock:/app/yarn.lock" \
