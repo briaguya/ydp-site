@@ -47,6 +47,13 @@ export default {
         })
       },
       {
+        path: "/butseriouslywtf",
+        component: "src/containers/ButSeriouslyWTF",
+        getData: () => ({
+          acronyms
+        })
+      },
+      {
         path: "/events",
         component: "src/containers/Events",
         getData: () => ({
