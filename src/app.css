@@ -31,3 +31,29 @@ nav a {
 .content {
   padding: 1rem;
 }
+
+.home__nav {
+  background: black;
+  text-align: center;
+}
+
+.wtf__title {
+  text-align: center;
+}
+
+.wtf__acronym {
+  background: #ff4dd5;
+  margin-top: 2rem;
+  font-size: 3rem;
+  text-align: center;
+  font-variant: all-petite-caps;
+}
+
+.wtf__button {
+    margin: 2rem;
+    text-align: center;
+    border: .2rem solid;
+    font-variant: all-petite-caps;
+    font-size: 2rem;
+    border-radius: .7rem;
+}

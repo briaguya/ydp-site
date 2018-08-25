@@ -25,8 +25,11 @@ export default withRouteData(() => {
 
   return (
     <div>
-      <div>{acronym}</div>
-      <Link to="/wtf">{noway}</Link>
+    <h1 className="wtf__title">What does D.A.D. stand for?</h1>
+      <div className="wtf__acronym">{acronym}</div>
+      <div className="wtf__button">
+        <Link to="/wtf">{noway}</Link>
+      </div>
     </div>
   );
 });

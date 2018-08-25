@@ -9,12 +9,12 @@ import "./app.css";
 const App = () => (
   <Router>
     <div>
-      <nav>
+      <nav className="home__nav">
         <Link exact to="/">
           Home
         </Link>
         <Link to="/events">Events</Link>
-        <Link to="/wtf">What does D.A.D. stand for?</Link>
+        <Link to="/wtf">D.A.D.?</Link>
       </nav>
       <div className="content">
         <Routes />
