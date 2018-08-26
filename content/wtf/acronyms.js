@@ -11,7 +11,16 @@ const acronyms = [
   "Dad and Dad",
   "Dance and Dream",
   "Drill and Dive",
-  "Dive and Discover"
+  "Dive and Discover",
+  "Dope ass dudes",
+  "Dope ass dads",
+  "Dick always delivers",
+  "Dope as dads",
+  "Dank acid dude",
+  "Dads against D.A.D.",
+  "Dads against dabs",
+  "Dabs are dumb",
+  "Dad are dumb"
 ];
 
 export default acronyms;
