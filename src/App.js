@@ -1,21 +1,15 @@
 import React from "react";
-import { Router, Link } from "react-static";
+import { Router } from "react-static";
 import { hot } from "react-hot-loader";
-//
 import Routes from "react-static-routes";
 
+import NavMenu from "./NavMenu";
 import "./app.css";
 
 const App = () => (
   <Router>
     <div>
-      <nav className="home__nav">
-        <Link exact to="/">
-          Home
-        </Link>
-        <Link to="/events">Events</Link>
-        <Link to="/wtf">D.A.D.?</Link>
-      </nav>
+      <NavMenu />
       <div className="content">
         <Routes />
       </div>
